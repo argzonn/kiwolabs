@@ -813,7 +813,7 @@ body.active { overflow: hidden; }
   bottom: 0;
   z-index: 10;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* keep text + buttons on one line */
   align-items: center;
   gap: 12px 16px;
   padding: 16px 20px;
@@ -823,8 +823,19 @@ body.active { overflow: hidden; }
   box-shadow: var(--shadow-2);
 }
 
-.cookie-consent .cookie-text { flex: 1; }
-.cookie-consent .cookie-actions { display: flex; gap: 10px; }
+.cookie-consent .cookie-text {
+  flex: 1;
+  min-width: 0;            /* allow flexbox to shrink */
+  white-space: nowrap;      /* keep in one line */
+  overflow: hidden;         /* clip overflow */
+  text-overflow: ellipsis;  /* ellipsis when clipped */
+}
+.cookie-consent .cookie-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
 
 /* Cookie modal */
 .cookie-modal {
@@ -866,6 +877,23 @@ body.active { overflow: hidden; }
 .cookie-label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
 .cookie-label input { margin-top: 4px; }
 .cookie-label small { display: block; color: var(--sonic-silver); }
+
+/* Keep modal action buttons on one line as well */
+.cookie-card .cookie-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+/* Tighten buttons on small screens to prevent wrapping */
+@media (max-width: 420px) {
+  .cookie-consent { padding: 12px 14px; gap: 8px 10px; }
+  .cookie-consent .cookie-actions .btn { --padding: 8px 12px; }
+  .cookie-card { padding: 16px; }
+  .cookie-card .cookie-actions .btn { --padding: 8px 12px; }
+}
 
 @media (min-width: 768px) {
   .cookie-consent {

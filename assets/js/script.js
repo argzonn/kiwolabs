@@ -634,8 +634,13 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
     hideBar(); hideModal();
   });
   if (rejectAll) rejectAll.addEventListener('click', () => {
-    setPrefs({ necessary: true, analytics: false, marketing: false, timestamp: Date.now() });
-    hideBar(); hideModal();
+    // Same behavior as Manage preferences: open modal (do not change prefs)
+    const p = getPrefs();
+    const a = document.getElementById('cookie-analytics');
+    const m = document.getElementById('cookie-marketing');
+    if (a) a.checked = !!p.analytics;
+    if (m) m.checked = !!p.marketing;
+    showModal();
   });
   if (manage) manage.addEventListener('click', () => {
     // reflect current state
@@ -644,7 +649,7 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
     const m = document.getElementById('cookie-marketing');
     if (a) a.checked = !!p.analytics;
     if (m) m.checked = !!p.marketing;
-    hideBar();
+    // Keep the consent bar visible; open the modal above it
     showModal();
   });
   if (save) save.addEventListener('click', () => {
@@ -653,10 +658,10 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
     setPrefs({ necessary: true, analytics: !!(a && a.checked), marketing: !!(m && m.checked), timestamp: Date.now() });
     hideBar(); hideModal();
   });
-  if (openLink) openLink.addEventListener('click', (e) => { e.preventDefault(); hideBar(); showModal(); });
-  if (closeBtn) closeBtn.addEventListener('click', hideModal);
-  // click outside to close
-  modal.addEventListener('click', (e) => { if (e.target === modal) hideModal(); });
-  // Esc to close
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideModal(); });
+  if (openLink) openLink.addEventListener('click', (e) => { e.preventDefault(); showModal(); });
+  if (closeBtn) closeBtn.addEventListener('click', () => { hideModal(); showBar(); });
+  // click outside to close (keep bar visible)
+  modal.addEventListener('click', (e) => { if (e.target === modal) { hideModal(); showBar(); } });
+  // Esc to close (keep bar visible)
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { hideModal(); showBar(); } });
 })();
