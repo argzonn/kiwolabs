@@ -80,7 +80,9 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
  */
 
 (function () {
-  const I18N_URL = './assets/i18n/translations.json';
+  const current = document.currentScript || document.querySelector('script[src*="assets/js/script.js"]');
+  const scriptUrl = current ? new URL(current.src, window.location.href) : new URL('./assets/js/script.js', window.location.href);
+  const I18N_URL = new URL('../i18n/translations.json', scriptUrl).href;
   const LS_KEY = 'site_lang';
 
   // Fallback translations used if fetching JSON fails (e.g., file://)
@@ -92,6 +94,7 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "nav.services": "Services",
       "nav.about": "About",
       "nav.contact": "Contact Us",
+      "nav.portfolio": "Portfolio",
       "hero.title": "Modern <span class=\"span\">web</span> development agency",
       "hero.text": "We design and build fast, accessible websites and web apps that scale — from landing pages to complex platforms.",
       "hero.cta": "Get Started",
@@ -170,7 +173,21 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "cookie.analytics": "Analytics",
       "cookie.analytics_desc": "Helps us understand site usage.",
       "cookie.marketing": "Marketing",
-      "cookie.marketing_desc": "Used for personalization and ads."
+      "cookie.marketing_desc": "Used for personalization and ads.",
+      "portfolio.meta.title": "Kanzlei Portfolio Scrollshots • KiwoLabs",
+      "portfolio.meta.description": "See four law firm concepts — Anthony, Schwarzer, Juristo, and Myron — presented as full-length scrollshots ready to explore.",
+      "portfolio.hero.title": "Kanzlei Portfolio Scrollshots",
+      "portfolio.hero.text": "Explore Anthony, Schwarzer, Juristo, and Myron — four distinctive law firm web concepts captured as immersive scrollshots for deep dives into each narrative.",
+      "portfolio.hero.hint": "Tap a preview to open the scrollshot",
+      "portfolio.cards.anthony.title": "Anthony – Justice &amp; Results",
+      "portfolio.cards.anthony.subtitle": "Justice / Expertise / Results",
+      "portfolio.cards.schwarzer.title": "Schwarzer – Criminal Defense",
+      "portfolio.cards.schwarzer.subtitle": "Munich Criminal Defense",
+      "portfolio.cards.juristo.title": "Juristo – Full-Service",
+      "portfolio.cards.juristo.subtitle": "Global Legal Solutions",
+      "portfolio.cards.myron.title": "Myron Law Associates",
+      "portfolio.cards.myron.subtitle": "Boutique Civil Practice",
+      "portfolio.lightbox.close": "Close"
     },
     "de": {
       "meta.title": "KiwoLabs",
@@ -179,6 +196,7 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "nav.services": "Leistungen",
       "nav.about": "Über uns",
       "nav.contact": "Kontakt",
+      "nav.portfolio": "Portfolio",
       "hero.title": "Moderne <span class=\"span\">Web</span>-Entwicklungsagentur",
       "hero.text": "Wir entwerfen und entwickeln schnelle, barrierefreie Websites und Web‑Apps – von Landingpages bis zu komplexen Plattformen.",
       "hero.cta": "Jetzt starten",
@@ -257,7 +275,21 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "cookie.analytics": "Analyse",
       "cookie.analytics_desc": "Hilft uns, die Nutzung zu verstehen.",
       "cookie.marketing": "Marketing",
-      "cookie.marketing_desc": "Für Personalisierung und Werbung."
+      "cookie.marketing_desc": "Für Personalisierung und Werbung.",
+      "portfolio.meta.title": "Kanzlei-Portfolio-Scrollshots • KiwoLabs",
+      "portfolio.meta.description": "Entdecken Sie vier Kanzlei-Auftritte – Anthony, Schwarzer, Juristo und Myron – als vollständige Scrollshots zum Durchscrollen.",
+      "portfolio.hero.title": "Kanzlei-Portfolio-Scrollshots",
+      "portfolio.hero.text": "Entdecken Sie Anthony, Schwarzer, Juristo und Myron – vier individuelle Kanzlei-Webkonzepte, als vollständige Scrollshots festgehalten, damit Sie jede Geschichte im Detail erleben können.",
+      "portfolio.hero.hint": "Tippen Sie auf eine Vorschau, um den Scrollshot zu öffnen",
+      "portfolio.cards.anthony.title": "Anthony – Justice &amp; Results",
+      "portfolio.cards.anthony.subtitle": "Justiz / Expertise / Ergebnisse",
+      "portfolio.cards.schwarzer.title": "Schwarzer – Strafverteidigung",
+      "portfolio.cards.schwarzer.subtitle": "Strafverteidigung München",
+      "portfolio.cards.juristo.title": "Juristo – Full-Service",
+      "portfolio.cards.juristo.subtitle": "Globale Rechtslösungen",
+      "portfolio.cards.myron.title": "Myron Law Associates",
+      "portfolio.cards.myron.subtitle": "Boutique-Zivilpraxis",
+      "portfolio.lightbox.close": "Schließen"
     },
     "nl": {
       "meta.title": "KiwoLabs",
@@ -266,6 +298,7 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "nav.services": "Diensten",
       "nav.about": "Over ons",
       "nav.contact": "Contact",
+      "nav.portfolio": "Portfolio",
       "hero.title": "Modern <span class=\"span\">web</span>ontwikkelingsbureau",
       "hero.text": "Wij ontwerpen en bouwen snelle, toegankelijke websites en webapps — van landingspagina’s tot complexe platforms.",
       "hero.cta": "Aan de slag",
@@ -344,7 +377,21 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "cookie.analytics": "Analyse",
       "cookie.analytics_desc": "Helpt ons het gebruik te begrijpen.",
       "cookie.marketing": "Marketing",
-      "cookie.marketing_desc": "Gebruikt voor personalisatie en advertenties."
+      "cookie.marketing_desc": "Gebruikt voor personalisatie en advertenties.",
+      "portfolio.meta.title": "Advocatenportfolio-scrollshots • KiwoLabs",
+      "portfolio.meta.description": "Bekijk vier advocatenkantoorconcepten – Anthony, Schwarzer, Juristo en Myron – gepresenteerd als volledige scrollshots om doorheen te bladeren.",
+      "portfolio.hero.title": "Advocatenportfolio scrollshots",
+      "portfolio.hero.text": "Verken Anthony, Schwarzer, Juristo en Myron – vier unieke advocatenkantoorconcepten, vastgelegd als volledige scrollshots zodat je elke case kunt induiken.",
+      "portfolio.hero.hint": "Tik op een preview om de scrollshot te openen",
+      "portfolio.cards.anthony.title": "Anthony – Justice &amp; Results",
+      "portfolio.cards.anthony.subtitle": "Justitie / Expertise / Resultaten",
+      "portfolio.cards.schwarzer.title": "Schwarzer – Strafrecht",
+      "portfolio.cards.schwarzer.subtitle": "Strafrecht München",
+      "portfolio.cards.juristo.title": "Juristo – Full-Service",
+      "portfolio.cards.juristo.subtitle": "Wereldwijde juridische oplossingen",
+      "portfolio.cards.myron.title": "Myron Law Associates",
+      "portfolio.cards.myron.subtitle": "Boutique civiele praktijk",
+      "portfolio.lightbox.close": "Sluiten"
     },
     "es": {
       "meta.title": "KiwoLabs",
@@ -353,6 +400,7 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "nav.services": "Servicios",
       "nav.about": "Nosotros",
       "nav.contact": "Contacto",
+      "nav.portfolio": "Portafolio",
       "hero.title": "Agencia moderna de <span class=\"span\">desarrollo web</span>",
       "hero.text": "Diseñamos y desarrollamos sitios y apps web rápidos y accesibles — desde landing pages hasta plataformas complejas.",
       "hero.cta": "Empezar",
@@ -431,7 +479,21 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "cookie.analytics": "Analíticas",
       "cookie.analytics_desc": "Nos ayuda a entender el uso del sitio.",
       "cookie.marketing": "Marketing",
-      "cookie.marketing_desc": "Para personalización y anuncios."
+      "cookie.marketing_desc": "Para personalización y anuncios.",
+      "portfolio.meta.title": "Scrollshots del portafolio Kanzlei • KiwoLabs",
+      "portfolio.meta.description": "Descubre cuatro conceptos de despachos — Anthony, Schwarzer, Juristo y Myron — presentados como scrollshots completos listos para explorar.",
+      "portfolio.hero.title": "Scrollshots del portafolio Kanzlei",
+      "portfolio.hero.text": "Explora Anthony, Schwarzer, Juristo y Myron — cuatro conceptos web de despachos de abogados capturados como scrollshots inmersivos para analizar cada detalle.",
+      "portfolio.hero.hint": "Toca una vista previa para abrir el scrollshot",
+      "portfolio.cards.anthony.title": "Anthony – Justice &amp; Results",
+      "portfolio.cards.anthony.subtitle": "Justicia / Experiencia / Resultados",
+      "portfolio.cards.schwarzer.title": "Schwarzer – Defensa penal",
+      "portfolio.cards.schwarzer.subtitle": "Defensa penal en Múnich",
+      "portfolio.cards.juristo.title": "Juristo – Full-Service",
+      "portfolio.cards.juristo.subtitle": "Soluciones legales globales",
+      "portfolio.cards.myron.title": "Myron Law Associates",
+      "portfolio.cards.myron.subtitle": "Despacho civil boutique",
+      "portfolio.lightbox.close": "Cerrar"
     },
     "fr": {
       "meta.title": "KiwoLabs",
@@ -440,6 +502,7 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "nav.services": "Services",
       "nav.about": "À propos",
       "nav.contact": "Contact",
+      "nav.portfolio": "Portfolio",
       "hero.title": "Agence moderne de <span class=\"span\">développement web</span>",
       "hero.text": "Nous concevons et développons des sites et apps web rapides et accessibles — des landing pages aux plateformes complexes.",
       "hero.cta": "Commencer",
@@ -518,7 +581,21 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
       "cookie.analytics": "Analytique",
       "cookie.analytics_desc": "Nous aide à comprendre l'utilisation du site.",
       "cookie.marketing": "Marketing",
-      "cookie.marketing_desc": "Utilisés pour la personnalisation et la publicité."
+      "cookie.marketing_desc": "Utilisés pour la personnalisation et la publicité.",
+      "portfolio.meta.title": "Scrollshots du portfolio Kanzlei • KiwoLabs",
+      "portfolio.meta.description": "Découvrez quatre concepts de cabinets — Anthony, Schwarzer, Juristo et Myron — présentés en scrollshots complets à explorer.",
+      "portfolio.hero.title": "Scrollshots du portfolio Kanzlei",
+      "portfolio.hero.text": "Découvrez Anthony, Schwarzer, Juristo et Myron — quatre concepts web de cabinets d’avocats capturés en scrollshots immersifs pour explorer chaque histoire en profondeur.",
+      "portfolio.hero.hint": "Touchez une vignette pour ouvrir le scrollshot",
+      "portfolio.cards.anthony.title": "Anthony – Justice &amp; Results",
+      "portfolio.cards.anthony.subtitle": "Justice / Expertise / Résultats",
+      "portfolio.cards.schwarzer.title": "Schwarzer – Défense pénale",
+      "portfolio.cards.schwarzer.subtitle": "Défense pénale à Munich",
+      "portfolio.cards.juristo.title": "Juristo – Full-Service",
+      "portfolio.cards.juristo.subtitle": "Solutions juridiques globales",
+      "portfolio.cards.myron.title": "Myron Law Associates",
+      "portfolio.cards.myron.subtitle": "Cabinet civil boutique",
+      "portfolio.lightbox.close": "Fermer"
     }
   };
 
@@ -559,6 +636,8 @@ addEventOnElem(window, "scroll", activeElemOnScroll);
     // select widgets reflect lang
     const selects = document.querySelectorAll('#lang-switcher, #lang-switcher-footer');
     selects.forEach(sel => { if (sel) sel.value = lang; });
+
+    document.dispatchEvent(new CustomEvent('i18n:applied', { detail: { dict, lang } }));
   }
 
   (fetch(I18N_URL).then(r => r.json()).catch(() => I18N_FALLBACK))

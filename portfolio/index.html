@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanzlei Portfolio Scrollshots • KiwoLabs</title>
+  <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
+
+    /*-----------------------------------*\
+      #style.css (inlined)
+    \*-----------------------------------*/
+
+    :root {
+
+      /**
+       * colors
+       */
+
+      --sefety-orange_10: hsla(24, 100%, 50%, 0.1);
+      --sefety-orange: hsl(24, 100%, 50%);
+      --sonic-silver: hsl(220, 1%, 48%);
+      --gunmetal_10: hsla(217, 21%, 16%, 0.1);
+      --davys-gray: hsl(220, 2%, 31%);
+      --light-gray: hsl(0, 0%, 80%);
+      --gunmetal: hsl(217, 21%, 16%);
+      --cultured: hsl(0, 0%, 95%);
+      --black_40: hsla(0, 0%, 0%, 0.4);
+      --black_25: hsla(0, 0%, 0%, 0.25);
+      --black_15: hsla(0, 0%, 0%, 0.15);
+      --white: hsl(0, 0%, 100%);
+      --snow: hsl(345, 20%, 96%);
+
+      /**
+       * typography
+       */
+
+      --ff-jost: 'Jost', sans-serif;
+
+      --fs-1: 3.8rem;
+      --fs-2: 2.2rem;
+      --fs-3: 2rem;
+      --fs-4: 1.8rem;
+      --fs-5: 1.4rem;
+
+      --fw-600: 600;
+      --fw-500: 500;
+
+      /**
+       * spacing
+       */
+
+      --section-padding: 80px;
+
+      /**
+       * shadow
+       */
+
+      --shadow-1: 0px 2px 15px hsla(0, 0%, 0%, 0.05);
+      --shadow-2: -10px 10px 40px -2px hsla(217, 21%, 16%, 0.05);
+
+      /**
+       * border radius
+       */
+
+      --radius-pill: 500px;
+      --radius-circle: 50%;
+      --radius-4: 4px;
+
+      /**
+       * transition
+       */
+
+      --transition-1: 0.25s ease;
+      --transition-2: 0.5s ease;
+      --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+      --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    li { list-style: none; }
+
+    a,
+    img,
+    span,
+    button {
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img { height: auto; }
+
+    button {
+      background: none;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    html {
+      font-family: var(--ff-jost);
+      font-size: 10px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--davys-gray);
+      font-size: 1.6rem;
+      line-height: 1.7;
+    }
+
+    body.active,
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    :focus-visible { outline-offset: 4px; }
+
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
+    ::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
+    ::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
+
+    .container { padding-inline: 15px; }
+    .section { padding-block: var(--section-padding); }
+
+    .h1,
+    .h2,
+    .h3,
+    .h4 {
+      color: var(--gunmetal);
+      line-height: 1.3;
+    }
+
+    .h1,
+    .h2 { font-size: var(--fs-1); }
+
+    .h3 { font-size: var(--fs-2); }
+    .h3,
+    .h4 { font-weight: var(--fw-600); }
+    .h4 { font-size: var(--fs-3); }
+
+    .section-title .span {
+      display: inline-block;
+      color: var(--sefety-orange);
+    }
+
+    .section-text { font-size: var(--fs-3); }
+
+    .btn {
+      background-color: var(--bg, var(--gunmetal));
+      color: var(--color, var(--white));
+      padding: var(--padding, 10px 20px);
+      border: 2px solid var(--border-color, var(--gunmetal));
+      border-radius: var(--radius-4);
+      transition: var(--transition-1);
+    }
+
+    .btn-primary {
+      --bg: var(--sefety-orange);
+      --color: var(--white);
+      --border-color: var(--sefety-orange);
+    }
+
+    .btn-primary:is(:hover, :focus) {
+      --bg: transparent;
+      --color: var(--sefety-orange);
+    }
+
+    .btn-secondary:is(:hover, :focus) {
+      --bg: var(--sefety-orange);
+      --border-color: var(--sefety-orange);
+    }
+
+    .btn-outline {
+      --bg: transparent;
+      --color: var(--sefety-orange);
+      --border-color: var(--sefety-orange);
+      --padding: 10px 28px;
+      font-weight: var(--fw-500);
+    }
+
+    .btn-outline:is(:hover, :focus) {
+      --color: var(--white);
+      --bg: var(--sefety-orange);
+    }
+
+    .has-shape {
+      position: relative;
+      z-index: 1;
+    }
+
+    .shape {
+      position: absolute;
+      z-index: -1;
+    }
+
+    .w-100 { width: 100%; }
+
+    .title-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+    }
+
+    .grid-list {
+      display: grid;
+      gap: 30px;
+    }
+
+    .header .btn { display: none; }
+
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-block: 25px;
+      z-index: 4;
+    }
+
+    .header.active {
+      position: fixed;
+      background-color: var(--white);
+      box-shadow: var(--shadow-1);
+      transform: translateY(-100%);
+      animation: slideIn 0.5s ease forwards;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-open-btn {
+      background-color: var(--gunmetal_10);
+      color: var(--gunmetal);
+      font-size: 20px;
+      padding: 10px;
+      border-radius: var(--radius-circle);
+      transition: var(--transition-1);
+    }
+
+    .nav-open-btn:is(:hover, :focus) {
+      background-color: var(--sefety-orange);
+      color: var(--white);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: -450px;
+      width: calc(100% - 70px);
+      max-width: 450px;
+      height: 100vh;
+      background-color: var(--cultured);
+      z-index: 1;
+      visibility: hidden;
+      transition: 0.25s var(--cubic-in);
+    }
+
+    .navbar.active {
+      transform: translateX(450px);
+      visibility: visible;
+      transition: 0.5s var(--cubic-out);
+    }
+
+    .navbar-title {
+      color: var(--black_40);
+      text-align: center;
+      padding: 12px;
+      border-block-end: 1px solid var(--black_15);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 1.3rem;
+    }
+
+    .navbar-item { border-block-end: 1px solid var(--black_15); }
+
+    .navbar-link {
+      color: var(--gunmetal);
+      padding: 15px 30px;
+      transition: var(--transition-1);
+      font-weight: var(--fw-500);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .navbar-link:is(:hover, :focus) { color: var(--sefety-orange); }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--black_25);
+      opacity: 0;
+      transition: var(--transition-1);
+      pointer-events: none;
+    }
+
+    .overlay.active {
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    .footer { color: var(--gunmetal); }
+
+    .footer-top {
+      display: grid;
+      gap: 30px;
+      border-block: 1px solid var(--light-gray);
+    }
+
+    .footer-link {
+      font-size: var(--fs-4);
+      transition: var(--transition-1);
+    }
+
+    .footer-link:is(:hover, :focus) { color: var(--sefety-orange); }
+
+    .footer-brand .footer-link:not(:last-of-type) { margin-block: 30px 15px; }
+
+    .footer-brand .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand .brand-row .footer-link { margin: 0; }
+
+    .social-list {
+      display: flex;
+      gap: 15px;
+      margin-block-start: 25px;
+    }
+
+    .social-link {
+      font-size: 20px;
+      transition: var(--transition-1);
+      display: inline-flex;
+    }
+
+    .social-link svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+    }
+
+    .social-link:is(:hover, :focus) { color: var(--sefety-orange); }
+
+    .footer-list .footer-link { padding-block: 5px; }
+    .footer-list-title { margin-block-end: 20px; }
+
+    .copyright {
+      padding-block: 35px;
+      text-align: center;
+    }
+
+    .lang-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      font: inherit;
+      font-size: var(--fs-4);
+      padding: 6px 28px 6px 10px;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-4);
+      background: var(--white);
+    }
+
+    .cookie-consent[hidden],
+    .cookie-modal[hidden] { display: none !important; }
+
+    .cookie-consent {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 12px 16px;
+      padding: 16px 20px;
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-4);
+      background: var(--white);
+      box-shadow: var(--shadow-2);
+    }
+
+    .cookie-consent .cookie-text {
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cookie-consent .cookie-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
+    .cookie-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      display: grid;
+      place-items: end center;
+      padding: 20px;
+      z-index: 11;
+    }
+
+    .cookie-card {
+      width: min(720px, 100%);
+      background: var(--white);
+      border: 1px solid var(--light-gray);
+      border-radius: var(--radius-4);
+      box-shadow: var(--shadow-2);
+      padding: 20px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .cookie-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .cookie-close {
+      font-size: 22px;
+      line-height: 1;
+      padding: 6px 10px;
+      border-radius: var(--radius-circle);
+    }
+
+    .cookie-desc { color: var(--sonic-silver); margin: 6px 0 14px; }
+    .cookie-list { display: grid; gap: 12px; margin: 0 0 16px; }
+    .cookie-item { list-style: none; }
+    .cookie-label { display: flex; align-items: flex-start; gap: 12px; cursor: pointer; }
+    .cookie-label input { margin-top: 4px; }
+    .cookie-label small { display: block; color: var(--sonic-silver); }
+
+    .cookie-card .cookie-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 420px) {
+      .cookie-consent { padding: 12px 14px; gap: 8px 10px; }
+      .cookie-consent .cookie-actions .btn { --padding: 8px 12px; }
+      .cookie-card { padding: 16px; }
+      .cookie-card .cookie-actions .btn { --padding: 8px 12px; }
+    }
+
+    @media (min-width: 575px) {
+      :root {
+        --fs-1: 5rem;
+      }
+
+      .container {
+        max-width: 540px;
+        width: 100%;
+        margin-inline: auto;
+      }
+
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 768px) {
+      .container { max-width: 720px; }
+      .grid-list { grid-template-columns: 1fr 1fr; }
+      .cookie-consent {
+        left: 50%;
+        right: auto;
+        bottom: 20px;
+        transform: translateX(-50%);
+        width: min(960px, calc(100% - 40px));
+        border-radius: var(--radius-4);
+      }
+      .cookie-modal { place-items: center; }
+    }
+
+    @media (min-width: 992px) {
+      :root {
+        --fs-1: 6.5rem;
+        --section-padding: 120px;
+      }
+
+      .container { max-width: 960px; }
+      .h2 { --fs-1: 5.5rem; }
+      .section-text { --fs-3: 2.4rem; }
+      .btn {
+        --padding: 10px 32px;
+        font-weight: var(--fw-500);
+      }
+      .btn-secondary { --padding: 14px 32px; }
+      .footer-top { grid-template-columns: 1fr 0.7fr 0.7fr 0.7fr; }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        --fs-1: 8rem;
+      }
+
+      .container { max-width: 1140px; }
+      .h2 { --fs-1: 6.2rem; }
+      .grid-list { grid-template-columns: repeat(3, 1fr); }
+
+      .nav-open-btn,
+      .navbar-title { display: none; }
+
+      .header .btn { display: block; }
+
+      .navbar,
+      .navbar.active {
+        all: unset;
+        margin-inline-start: auto;
+      }
+
+      .navbar-list {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .navbar-item { border: none; }
+      .navbar-link { padding: 0; }
+    }
+
+    @media (min-width: 1200px) {
+      .cookie-consent { width: min(1140px, calc(100% - 40px)); }
+    }
+
+    /*-----------------------------------*\
+      #Portfolio specific styling
+    \*-----------------------------------*/
+
+    main {
+      background: var(--snow);
+    }
+
+    .page-hero {
+      padding-block-start: calc(var(--section-padding) + 110px);
+      padding-block-end: 40px;
+    }
+
+    .page-hero .section-text {
+      margin-top: 18px;
+      max-width: 60ch;
+    }
+
+    .page-hero .container {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .page-hero-content {
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+    }
+
+    .portfolio-gallery {
+      padding-block: clamp(48px, 6vw, 80px);
+    }
+
+    .portfolio-gallery .container {
+      display: grid;
+      gap: 40px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      gap: clamp(24px, 3vw, 36px);
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .portfolio-card {
+      text-align: left;
+      background: transparent;
+      border-radius: 22px;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: transform var(--transition-1), filter var(--transition-1);
+    }
+
+    .portfolio-card:focus-visible {
+      outline: 3px solid var(--sefety-orange);
+      outline-offset: 8px;
+    }
+
+    .portfolio-card:hover,
+    .portfolio-card:active {
+      transform: translateY(-6px);
+      filter: saturate(1.05);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 24px 58px -24px rgba(15, 23, 42, 0.38);
+    }
+
+    .portfolio-card__meta {
+      display: grid;
+      gap: 6px;
+      padding-inline: 6px;
+    }
+
+    .portfolio-card__title {
+      font-size: 2rem;
+      font-weight: var(--fw-600);
+      color: var(--gunmetal);
+    }
+
+    .portfolio-card__subtitle {
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sonic-silver);
+    }
+
+    .portfolio-card__subtitle strong {
+      font-weight: var(--fw-500);
+      color: var(--gunmetal);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      padding: clamp(16px, 5vw, 48px);
+      background: rgba(8, 12, 24, 0.86);
+      backdrop-filter: blur(6px);
+    }
+
+    .lightbox[hidden] {
+      display: none;
+    }
+
+    .lightbox__dialog {
+      position: relative;
+      width: min(960px, 100%);
+      background: var(--white);
+      border-radius: 28px;
+      box-shadow: 0 35px 80px rgba(15, 23, 42, 0.22);
+      padding: clamp(24px, 4vw, 40px);
+      display: grid;
+      gap: clamp(20px, 3vw, 28px);
+      max-height: min(90vh, 960px);
+    }
+
+    .lightbox__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .lightbox__header h2 {
+      margin: 0;
+      font-size: clamp(2rem, 2.4vw, 2.6rem);
+      letter-spacing: 0.04em;
+    }
+
+    .lightbox__subtitle {
+      margin-top: 6px;
+      font-size: 1.4rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sonic-silver);
+    }
+
+    .lightbox__close {
+      margin-left: auto;
+    }
+
+    .lightbox__scrollshot {
+      background: var(--cultured);
+      border-radius: 20px;
+      padding: clamp(12px, 2vw, 20px);
+      overflow-y: auto;
+      max-height: calc(min(90vh, 960px) - clamp(160px, 20vw, 220px));
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+    }
+
+    .lightbox__scrollshot img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .portfolio-hint {
+      font-size: 1.4rem;
+      color: var(--sonic-silver);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 640px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 599px) {
+      .page-hero {
+        padding-block-start: calc(var(--section-padding) + 90px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .lightbox__dialog {
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .lightbox__scrollshot {
+        max-height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" data-header>
+    <div class="container">
+      <a href="../index.html#home" class="logo" aria-label="KiwoLabs home">
+        <img src="../assets/images/logo.svg" width="209" height="52" alt="KIWOLABS logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <p class="navbar-title">Main Menu</p>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="../index.html#home" class="navbar-link" data-nav-link data-i18n="nav.home">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../index.html#services" class="navbar-link" data-nav-link data-i18n="nav.services">Services</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../index.html#about" class="navbar-link" data-nav-link data-i18n="nav.about">About</a>
+          </li>
+          <li class="navbar-item">
+            <a href="../portfolio/index.html" class="navbar-link" data-nav-link data-i18n="nav.portfolio">Portfolio</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="nav-open-btn" type="button" aria-label="Toggle menu" aria-expanded="false" data-nav-toggler>
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <a href="../index.html#contact" class="btn btn-primary" data-nav-link data-i18n="nav.contact">Contact Us</a>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="section page-hero" id="portfolio" aria-label="Portfolio hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <h1 class="h1 section-title" data-i18n="portfolio.hero.title">Kanzlei Portfolio Scrollshots</h1>
+            <p class="section-text" data-i18n="portfolio.hero.text">Explore Anthony, Schwarzer, Juristo, and Myron — four distinctive law firm web concepts captured as immersive scrollshots for deep dives into each narrative.</p>
+            <p class="portfolio-hint" data-i18n="portfolio.hero.hint">Tap a preview to open the scrollshot</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio-gallery" aria-label="Kanzlei portfolio gallery">
+        <div class="container">
+          <div class="portfolio-grid">
+            <button class="portfolio-card" type="button" data-long="shots/anthony-long.jpg" data-title="Anthony – Justice &amp; Results" data-subtitle="Justice / Expertise / Results" data-title-key="portfolio.cards.anthony.title" data-subtitle-key="portfolio.cards.anthony.subtitle">
+              <img src="shots/anthony-thumb.jpg" loading="lazy" alt="Anthony law portfolio concept thumbnail">
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__title" data-i18n="portfolio.cards.anthony.title">Anthony – Justice &amp; Results</span>
+                <span class="portfolio-card__subtitle" data-i18n="portfolio.cards.anthony.subtitle">Justice / Expertise / Results</span>
+              </div>
+            </button>
+
+            <button class="portfolio-card" type="button" data-long="shots/schwarzer-long.jpg" data-title="Schwarzer – Criminal Defense" data-subtitle="Munich Criminal Defense" data-title-key="portfolio.cards.schwarzer.title" data-subtitle-key="portfolio.cards.schwarzer.subtitle">
+              <img src="shots/schwarzer-thumb.jpg" loading="lazy" alt="Schwarzer criminal defense website concept thumbnail">
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__title" data-i18n="portfolio.cards.schwarzer.title">Schwarzer – Criminal Defense</span>
+                <span class="portfolio-card__subtitle" data-i18n="portfolio.cards.schwarzer.subtitle">Munich Criminal Defense</span>
+              </div>
+            </button>
+
+            <button class="portfolio-card" type="button" data-long="shots/juristo-long.jpg" data-title="Juristo – Full-Service" data-subtitle="Global Legal Solutions" data-title-key="portfolio.cards.juristo.title" data-subtitle-key="portfolio.cards.juristo.subtitle">
+              <img src="shots/juristo-thumb.jpg" loading="lazy" alt="Juristo law agency scrollshot thumbnail">
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__title" data-i18n="portfolio.cards.juristo.title">Juristo – Full-Service</span>
+                <span class="portfolio-card__subtitle" data-i18n="portfolio.cards.juristo.subtitle">Global Legal Solutions</span>
+              </div>
+            </button>
+
+            <button class="portfolio-card" type="button" data-long="shots/myron-long.jpg" data-title="Myron Law Associates" data-subtitle="Boutique Civil Practice" data-title-key="portfolio.cards.myron.title" data-subtitle-key="portfolio.cards.myron.subtitle">
+              <img src="shots/myron-thumb.jpg" loading="lazy" alt="Myron Law Associates site concept thumbnail">
+              <div class="portfolio-card__meta">
+                <span class="portfolio-card__title" data-i18n="portfolio.cards.myron.title">Myron Law Associates</span>
+                <span class="portfolio-card__subtitle" data-i18n="portfolio.cards.myron.subtitle">Boutique Civil Practice</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <div class="lightbox" data-lightbox hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-describedby="lightbox-subtitle">
+    <div class="lightbox__dialog">
+      <div class="lightbox__header">
+        <div>
+          <h2 id="lightbox-title" data-lightbox-title data-i18n="portfolio.cards.anthony.title">Anthony – Justice &amp; Results</h2>
+          <p class="lightbox__subtitle" id="lightbox-subtitle" data-lightbox-subtitle data-i18n="portfolio.cards.anthony.subtitle">Justice / Expertise / Results</p>
+        </div>
+        <button class="btn btn-outline lightbox__close" type="button" data-lightbox-close data-i18n="portfolio.lightbox.close" aria-label="Close scrollshot">Close</button>
+      </div>
+      <div class="lightbox__scrollshot" data-lightbox-scroll>
+        <img src="shots/anthony-long.jpg" alt="Anthony law portfolio scrollshot" data-lightbox-image>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top section">
+        <div class="footer-brand">
+          <div class="brand-row">
+            <a href="../index.html#home" class="logo" aria-label="KiwoLabs home">
+              <img src="../assets/images/logo.svg" width="209" height="52" alt="KIWOLABS logo">
+            </a>
+            <a href="mailto:contact@kiwolabs.com" class="footer-link">contact@kiwolabs.com</a>
+          </div>
+
+          <ul class="social-list">
+            <li>
+              <a href="https://www.linkedin.com/in/argzon/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false">
+                  <path d="M100.28 448H7.4V148.9h92.88zm-46.44-338A53.79 53.79 0 1 1 107.6 56a53.79 53.79 0 0 1-53.76 54zM447.9 448h-92.4V302.4c0-34.7-.7-79.3-48.34-79.3-48.36 0-55.76 37.7-55.76 76.6V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.6-48.3 87.6-48.3 93.6 0 110.8 61.6 110.8 141.7z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="footer-list">
+          <li>
+            <p class="h4 footer-list-title" data-i18n="footer.links">Links</p>
+          </li>
+          <li>
+            <a href="../index.html#home" class="footer-link" data-i18n="nav.home">Home</a>
+          </li>
+          <li>
+            <a href="../index.html#services" class="footer-link" data-i18n="nav.services">Services</a>
+          </li>
+          <li>
+            <a href="../index.html#about" class="footer-link" data-i18n="nav.about">About</a>
+          </li>
+          <li>
+            <a href="../index.html#contact" class="footer-link" data-i18n="nav.contact">Contact Us</a>
+          </li>
+          <li>
+            <a href="./index.html" class="footer-link" data-i18n="nav.portfolio">Portfolio</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+          <li>
+            <p class="h4 footer-list-title" data-i18n="footer.legal">Legal</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link" data-i18n="legal.privacy">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link" data-i18n="legal.terms">Terms of Service</a>
+          </li>
+          <li>
+            <a href="#" class="footer-link" data-i18n="legal.cookies">Cookie Policy</a>
+          </li>
+        </ul>
+
+        <div class="footer-lang">
+          <label for="lang-switcher-footer" class="h4 footer-list-title" style="margin:0 0 8px 0;" data-i18n="footer.language">Language</label>
+          <select class="lang-select" id="lang-switcher-footer" aria-label="Language select">
+            <option value="en">EN</option>
+            <option value="de">DE</option>
+            <option value="nl">NL</option>
+            <option value="es">ES</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          Copyright 2025 All Rights Reserved by KIWOLABS.
+        </p>
+
+        <p style="text-align:center; margin-top:8px;">
+          <a href="#" id="cookie-open" class="footer-link" data-i18n="cookie.manage">Manage preferences</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-consent" id="cookie-consent" hidden role="region" aria-live="polite">
+    <p class="cookie-text" data-i18n="cookie.text">We use cookies to improve your experience. Do you accept?</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn-secondary" id="cookie-accept-all" data-i18n="cookie.accept_all">Accept all</button>
+      <button type="button" class="btn btn-outline" id="cookie-reject-all" data-i18n="cookie.reject_all">Reject all</button>
+      <button type="button" class="btn btn-outline" id="cookie-manage" data-i18n="cookie.manage">Manage preferences</button>
+    </div>
+  </div>
+
+  <div class="cookie-modal" id="cookie-modal" hidden aria-modal="true" role="dialog" aria-labelledby="cookie-modal-title">
+    <div class="cookie-card">
+      <div class="cookie-card-header">
+        <h3 class="h3" id="cookie-modal-title" data-i18n="cookie.manage">Manage preferences</h3>
+        <button type="button" class="cookie-close" id="cookie-close" aria-label="Close">×</button>
+      </div>
+      <p class="cookie-desc" data-i18n="cookie.detail">Choose which cookies to accept. Necessary cookies are always on.</p>
+
+      <ul class="cookie-list">
+        <li class="cookie-item">
+          <label class="cookie-label">
+            <input type="checkbox" checked disabled>
+            <span>
+              <strong data-i18n="cookie.necessary">Necessary</strong>
+              <small data-i18n="cookie.necessary_desc">Required for core site functionality.</small>
+            </span>
+          </label>
+        </li>
+        <li class="cookie-item">
+          <label class="cookie-label">
+            <input type="checkbox" id="cookie-analytics">
+            <span>
+              <strong data-i18n="cookie.analytics">Analytics</strong>
+              <small data-i18n="cookie.analytics_desc">Helps us understand site usage.</small>
+            </span>
+          </label>
+        </li>
+        <li class="cookie-item">
+          <label class="cookie-label">
+            <input type="checkbox" id="cookie-marketing">
+            <span>
+              <strong data-i18n="cookie.marketing">Marketing</strong>
+              <small data-i18n="cookie.marketing_desc">Used for personalization and ads.</small>
+            </span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-secondary" id="cookie-save" data-i18n="cookie.save">Save preferences</button>
+        <button type="button" class="btn btn-outline" id="cookie-accept-all-2" data-i18n="cookie.accept_all">Accept all</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/script.js" defer></script>
+  <script>
+    (function () {
+      const cards = Array.from(document.querySelectorAll('.portfolio-card'));
+      const lightbox = document.querySelector('[data-lightbox]');
+      if (!cards.length || !lightbox) return;
+
+      const lightboxImage = lightbox.querySelector('[data-lightbox-image]');
+      const lightboxTitle = lightbox.querySelector('[data-lightbox-title]');
+      const lightboxSubtitle = lightbox.querySelector('[data-lightbox-subtitle]');
+      const closeButton = lightbox.querySelector('[data-lightbox-close]');
+      const scrollContainer = lightbox.querySelector('[data-lightbox-scroll]');
+      let lastFocused = null;
+
+      const syncCardData = () => {
+        cards.forEach((card) => {
+          const titleEl = card.querySelector('.portfolio-card__title');
+          const subtitleEl = card.querySelector('.portfolio-card__subtitle');
+          if (titleEl) card.dataset.title = titleEl.textContent.trim();
+          if (subtitleEl) card.dataset.subtitle = subtitleEl.textContent.trim();
+        });
+
+        const first = cards[0];
+        if (first) {
+          if (lightboxTitle) lightboxTitle.textContent = first.dataset.title || '';
+          if (lightboxSubtitle) lightboxSubtitle.textContent = first.dataset.subtitle || '';
+          if (lightboxImage) {
+            const src = first.dataset.long;
+            if (src) lightboxImage.src = src;
+            const label = first.dataset.title || 'Portfolio scrollshot';
+            lightboxImage.alt = `${label} Scrollshot`;
+          }
+        }
+      };
+
+      const openLightbox = (card) => {
+        const imageSrc = card.dataset.long;
+        const title = card.dataset.title;
+        const subtitle = card.dataset.subtitle;
+
+        if (lightboxImage) {
+          if (imageSrc) lightboxImage.src = imageSrc;
+          const label = title || 'Portfolio scrollshot';
+          lightboxImage.alt = `${label} Scrollshot`;
+        }
+        if (lightboxTitle) lightboxTitle.textContent = title || '';
+        if (lightboxSubtitle) lightboxSubtitle.textContent = subtitle || '';
+
+        lightbox.removeAttribute('hidden');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        if (scrollContainer) scrollContainer.scrollTop = 0;
+        closeButton?.focus({ preventScroll: true });
+      };
+
+      const closeLightbox = () => {
+        lightbox.setAttribute('hidden', '');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lightboxImage) lightboxImage.src = '';
+        if (lastFocused) {
+          lastFocused.focus({ preventScroll: true });
+        }
+      };
+
+      cards.forEach((card) => {
+        card.addEventListener('click', () => {
+          lastFocused = card;
+          openLightbox(card);
+        });
+      });
+
+      closeButton?.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', (event) => {
+        const dialog = lightbox.querySelector('.lightbox__dialog');
+        if (dialog && !dialog.contains(event.target)) {
+          closeLightbox();
+        }
+      });
+
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('i18n:applied', (event) => {
+        const detail = event.detail || {};
+        const dict = detail.dict || {};
+        const lang = detail.lang;
+        const translations = dict[lang] || dict['en'] || {};
+
+        syncCardData();
+
+        if (translations['portfolio.meta.title']) {
+          document.title = translations['portfolio.meta.title'];
+        }
+        if (translations['portfolio.meta.description']) {
+          let md = document.querySelector('meta[name="description"]');
+          if (!md) {
+            md = document.createElement('meta');
+            md.setAttribute('name', 'description');
+            document.head.appendChild(md);
+          }
+          md.setAttribute('content', translations['portfolio.meta.description']);
+        }
+        if (closeButton && translations['portfolio.lightbox.close']) {
+          closeButton.setAttribute('aria-label', translations['portfolio.lightbox.close']);
+        }
+      });
+
+      syncCardData();
+    })();
+  </script>
+</body>
+</html>
